@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos Congelados | Pedidos por WhatsApp</title>
+
+  <meta name="description" content="Productos congelados de calidad. Formatos claros y pedidos directos por WhatsApp. Web simple y pensada para vender." />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#12182b;
+      --primary:#25D366;
+      --text:#eaeaf0;
+      --muted:#aab0d6;
+      --accent:#6ee7ff;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',system-ui,Arial,sans-serif;
+      background:linear-gradient(180deg,#0b0f19 0%, #0e1430 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .container{max-width:1100px;margin:auto;padding:24px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0 24px 0;
+    }
+    header h1{
+      font-size:1.2rem;font-weight:600;letter-spacing:.5px
+    }
+    header span{color:var(--accent)}
+
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;
+      margin:24px 0 48px 0;
+    }
+    .hero-card{
+      background:radial-gradient(1200px 400px at 10% -20%, rgba(110,231,255,.12), transparent),
+                 var(--card);
+      border-radius:18px;padding:28px;
+      box-shadow:0 20px 40px rgba(0,0,0,.35);
+    }
+    .hero h2{
+      font-size:2rem;line-height:1.2;margin-bottom:14px
+    }
+    .hero p{color:var(--muted);margin-bottom:22px}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--primary);color:#062d14;
+      padding:14px 22px;border-radius:999px;
+      text-decoration:none;font-weight:600;
+      box-shadow:0 10px 25px rgba(37,211,102,.35);
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(110,231,255,.12);
+      color:var(--accent);
+      padding:6px 12px;border-radius:999px;
+      font-size:.8rem;margin-bottom:10px
+    }
+
+    .mock{
+      border-radius:18px;
+      background:linear-gradient(135deg,#1b2250,#0e1430);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.2rem;color:#9aa2ff;
+      min-height:260px;
+      border:1px dashed rgba(255,255,255,.15);
+    }
+
+    section{margin:64px 0}
+
+    h3{font-size:1.5rem;margin-bottom:18px}
+
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+    }
+
+    .card{
+      background:var(--card);border-radius:16px;padding:22px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25)
+    }
+    .card h4{margin-bottom:10px}
+    .card p{color:var(--muted);font-size:.95rem}
+
+    .steps{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+    }
+    .step{
+      background:linear-gradient(180deg,#12182b,#0f1533);
+      border-radius:16px;padding:22px
+    }
+    .step span{
+      display:inline-block;width:34px;height:34px;border-radius:50%;
+      background:var(--accent);color:#031018;
+      font-weight:700;display:flex;align-items:center;justify-content:center;
+      margin-bottom:10px
+    }
+
+    footer{
+      margin-top:80px;padding:24px 0;
+      border-top:1px solid rgba(255,255,255,.1);
+      text-align:center;color:var(--muted);font-size:.9rem
+    }
+    footer a{color:var(--accent);text-decoration:none}
+
+    /* WhatsApp flotante */
+    .wa-float{
+      position:fixed;right:18px;bottom:96px;
+      background:var(--primary);color:#062d14;
+      width:56px;height:56px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;text-decoration:none;
+      box-shadow:0 10px 25px rgba(37,211,102,.45);
+      z-index:1000
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid,.steps{grid-template-columns:1fr}
+      .hero h2{font-size:1.7rem}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1><span>Demo</span> Productos Congelados</h1>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <span class="badge">Vista previa</span>
+        <h2>Productos congelados<br>pedidos directos por WhatsApp</h2>
+        <p>
+          Una web simple y clara para que tus clientes vean qué ofrecés,
+          los formatos disponibles y te escriban sin vueltas para hacer el pedido.
+        </p>
+        <a class="btn" href="https://wa.me/5491164499481?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">
+          Pedir por WhatsApp
+        </a>
+      </div>
+
+      <div class="mock">
+        Vista previa del producto / fotos
+      </div>
+    </section>
+
+    <section>
+      <h3>¿Qué se puede mostrar en esta web?</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Productos</h4>
+          <p>Listado claro de los productos congelados que vendés.</p>
+        </div>
+        <div class="card">
+          <h4>Formatos</h4>
+          <p>Presentaciones, kilos, bolsas o packs disponibles.</p>
+        </div>
+        <div class="card">
+          <h4>Contacto directo</h4>
+          <p>Botón de WhatsApp siempre visible para pedidos rápidos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>¿Cómo compra el cliente?</h3>
+      <div class="steps">
+        <div class="step">
+          <span>1</span>
+          <p>Entra al link desde Instagram, estados o mensaje.</p>
+        </div>
+        <div class="step">
+          <span>2</span>
+          <p>Ve los productos y formatos disponibles.</p>
+        </div>
+        <div class="step">
+          <span>3</span>
+          <p>Hace el pedido directo por WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Demo web – vista previa.<br>
+      Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank">Ciborg 347</a>
+    </footer>
+  </div>
+
+  <a class="wa-float" href="https://wa.me/5491164499481?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">🟢</a>
+
+</body>
+  </html>
