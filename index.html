@@ -5,26 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Productos Congelados | Pedidos por WhatsApp</title>
 
-  <meta name="description" content="Productos congelados de calidad. Formatos claros y pedidos directos por WhatsApp. Web simple y pensada para vender." />
-  <meta name="theme-color" content="#0b0f19" />
+  <meta name="description" content="Productos congelados de calidad. Pedidos directos por WhatsApp." />
+  <meta name="theme-color" content="#0a0a0a" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b0f19;
-      --card:#12182b;
-      --primary:#25D366;
-      --text:#eaeaf0;
-      --muted:#aab0d6;
-      --accent:#6ee7ff;
+      --bg:#0a0a0a;
+      --card:#121212;
+      --gold:#d4af37;
+      --gold-soft:#f1d98a;
+      --text:#f5f5f5;
+      --muted:#b5b5b5;
+      --wa:#25D366;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+
     body{
       font-family:'Poppins',system-ui,Arial,sans-serif;
-      background:linear-gradient(180deg,#0b0f19 0%, #0e1430 100%);
+      background:radial-gradient(circle at top, #1a1a1a 0%, #0a0a0a 70%);
       color:var(--text);
       line-height:1.6;
     }
@@ -32,176 +34,237 @@
     .container{max-width:1100px;margin:auto;padding:24px}
 
     header{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0 24px 0;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:16px 0 28px;
     }
-    header h1{
-      font-size:1.2rem;font-weight:600;letter-spacing:.5px
+
+    header img{
+      height:52px;
+      object-fit:contain;
     }
-    header span{color:var(--accent)}
+
+    header span{
+      color:var(--gold);
+      font-weight:600;
+      letter-spacing:1px;
+      font-size:.9rem;
+    }
 
     .hero{
-      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;
-      margin:24px 0 48px 0;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:28px;
+      margin-bottom:48px;
     }
-    .hero-card{
-      background:radial-gradient(1200px 400px at 10% -20%, rgba(110,231,255,.12), transparent),
-                 var(--card);
-      border-radius:18px;padding:28px;
-      box-shadow:0 20px 40px rgba(0,0,0,.35);
-    }
-    .hero h2{
-      font-size:2rem;line-height:1.2;margin-bottom:14px
-    }
-    .hero p{color:var(--muted);margin-bottom:22px}
 
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      background:var(--primary);color:#062d14;
-      padding:14px 22px;border-radius:999px;
-      text-decoration:none;font-weight:600;
-      box-shadow:0 10px 25px rgba(37,211,102,.35);
+    .hero-card{
+      background:linear-gradient(180deg,#141414,#0e0e0e);
+      border-radius:18px;
+      padding:28px;
+      border:1px solid rgba(212,175,55,.25);
+      box-shadow:0 20px 40px rgba(0,0,0,.5);
     }
 
     .badge{
       display:inline-block;
-      background:rgba(110,231,255,.12);
-      color:var(--accent);
-      padding:6px 12px;border-radius:999px;
-      font-size:.8rem;margin-bottom:10px
+      background:rgba(212,175,55,.15);
+      color:var(--gold);
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:.75rem;
+      margin-bottom:12px;
+      letter-spacing:.5px;
+    }
+
+    .hero h2{
+      font-size:2rem;
+      line-height:1.2;
+      margin-bottom:14px;
+      color:var(--gold-soft);
+    }
+
+    .hero p{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .btn-wa{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:var(--wa);
+      color:#062d14;
+      padding:14px 22px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(37,211,102,.35);
+    }
+
+    .btn-wa svg{
+      width:22px;
+      height:22px;
+      fill:#062d14;
     }
 
     .mock{
       border-radius:18px;
-      background:linear-gradient(135deg,#1b2250,#0e1430);
-      display:flex;align-items:center;justify-content:center;
-      font-size:1.2rem;color:#9aa2ff;
+      background:linear-gradient(135deg,#1f1f1f,#0f0f0f);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.05rem;
+      color:var(--gold);
       min-height:260px;
-      border:1px dashed rgba(255,255,255,.15);
+      border:1px dashed rgba(212,175,55,.35);
+      text-align:center;
+      padding:20px;
     }
 
     section{margin:64px 0}
 
-    h3{font-size:1.5rem;margin-bottom:18px}
+    h3{
+      font-size:1.5rem;
+      margin-bottom:18px;
+      color:var(--gold-soft);
+    }
 
     .grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
     }
 
     .card{
-      background:var(--card);border-radius:16px;padding:22px;
-      box-shadow:0 10px 25px rgba(0,0,0,.25)
+      background:linear-gradient(180deg,#141414,#0f0f0f);
+      border-radius:16px;
+      padding:22px;
+      border:1px solid rgba(212,175,55,.2);
     }
-    .card h4{margin-bottom:10px}
-    .card p{color:var(--muted);font-size:.95rem}
 
-    .steps{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+    .card h4{
+      color:var(--gold);
+      margin-bottom:10px;
     }
-    .step{
-      background:linear-gradient(180deg,#12182b,#0f1533);
-      border-radius:16px;padding:22px
-    }
-    .step span{
-      display:inline-block;width:34px;height:34px;border-radius:50%;
-      background:var(--accent);color:#031018;
-      font-weight:700;display:flex;align-items:center;justify-content:center;
-      margin-bottom:10px
+
+    .card p{
+      color:var(--muted);
+      font-size:.95rem;
     }
 
     footer{
-      margin-top:80px;padding:24px 0;
-      border-top:1px solid rgba(255,255,255,.1);
-      text-align:center;color:var(--muted);font-size:.9rem
+      margin-top:80px;
+      padding:24px 0;
+      border-top:1px solid rgba(212,175,55,.25);
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
     }
-    footer a{color:var(--accent);text-decoration:none}
+
+    footer a{
+      color:var(--gold);
+      text-decoration:none;
+    }
 
     /* WhatsApp flotante */
     .wa-float{
-      position:fixed;right:18px;bottom:96px;
-      background:var(--primary);color:#062d14;
-      width:56px;height:56px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      font-size:28px;text-decoration:none;
+      position:fixed;
+      right:18px;
+      bottom:96px;
+      background:var(--wa);
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       box-shadow:0 10px 25px rgba(37,211,102,.45);
-      z-index:1000
+      z-index:1000;
+    }
+
+    .wa-float svg{
+      width:28px;
+      height:28px;
+      fill:#062d14;
     }
 
     @media(max-width:900px){
       .hero{grid-template-columns:1fr}
-      .grid,.steps{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
       .hero h2{font-size:1.7rem}
+      header{justify-content:center}
     }
   </style>
 </head>
+
 <body>
 
-  <div class="container">
-    <header>
-      <h1><span>Demo</span> Productos Congelados</h1>
-    </header>
+<div class="container">
 
-    <section class="hero">
-      <div class="hero-card">
-        <span class="badge">Vista previa</span>
-        <h2>Productos congelados<br>pedidos directos por WhatsApp</h2>
-        <p>
-          Una web simple y clara para que tus clientes vean qué ofrecés,
-          los formatos disponibles y te escriban sin vueltas para hacer el pedido.
-        </p>
-        <a class="btn" href="https://wa.me/5491164499481?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">
-          Pedir por WhatsApp
-        </a>
+  <header>
+    <img src="https://iili.io/fVUTG87.md.jpg" alt="Logo negocio">
+    <span>VISTA PREVIA</span>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <span class="badge">DEMO</span>
+      <h2>Productos congelados<br>pedidos directos por WhatsApp</h2>
+      <p>
+        Una web simple y clara para que tus clientes vean qué ofrecés,
+        los formatos disponibles y hagan el pedido sin vueltas.
+      </p>
+
+      <a class="btn-wa" href="https://wa.me/5491164499481?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">
+        <!-- Icono oficial WhatsApp -->
+        <svg viewBox="0 0 32 32">
+          <path d="M19.11 17.38c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.41.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.46-.16 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.13.65.28 1.15.45 1.54.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.27.23-.61.23-1.14.16-1.25-.07-.11-.25-.18-.52-.32z"/>
+          <path d="M16 3C9.38 3 4 8.38 4 15c0 2.12.55 4.12 1.6 5.89L4 29l8.3-1.55A11.94 11.94 0 0 0 16 27c6.62 0 12-5.38 12-12S22.62 3 16 3zm0 21.8c-1.88 0-3.72-.5-5.34-1.45l-.38-.22-4.92.92.93-4.8-.25-.4A9.77 9.77 0 0 1 6.2 15c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8z"/>
+        </svg>
+        Pedir por WhatsApp
+      </a>
+    </div>
+
+    <div class="mock">
+      Acá van las fotos reales del producto<br>
+      (papas, congelados, packs, etc.)
+    </div>
+  </section>
+
+  <section>
+    <h3>¿Qué muestra esta web?</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Productos</h4>
+        <p>Listado claro de los productos congelados disponibles.</p>
       </div>
-
-      <div class="mock">
-        Vista previa del producto / fotos
+      <div class="card">
+        <h4>Formatos</h4>
+        <p>Bolsas, kilos, packs y presentaciones.</p>
       </div>
-    </section>
-
-    <section>
-      <h3>¿Qué se puede mostrar en esta web?</h3>
-      <div class="grid">
-        <div class="card">
-          <h4>Productos</h4>
-          <p>Listado claro de los productos congelados que vendés.</p>
-        </div>
-        <div class="card">
-          <h4>Formatos</h4>
-          <p>Presentaciones, kilos, bolsas o packs disponibles.</p>
-        </div>
-        <div class="card">
-          <h4>Contacto directo</h4>
-          <p>Botón de WhatsApp siempre visible para pedidos rápidos.</p>
-        </div>
+      <div class="card">
+        <h4>Pedido directo</h4>
+        <p>Contacto inmediato por WhatsApp, sin intermediarios.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h3>¿Cómo compra el cliente?</h3>
-      <div class="steps">
-        <div class="step">
-          <span>1</span>
-          <p>Entra al link desde Instagram, estados o mensaje.</p>
-        </div>
-        <div class="step">
-          <span>2</span>
-          <p>Ve los productos y formatos disponibles.</p>
-        </div>
-        <div class="step">
-          <span>3</span>
-          <p>Hace el pedido directo por WhatsApp.</p>
-        </div>
-      </div>
-    </section>
+  <footer>
+    Demo web – vista previa.<br>
+    Creado y diseñado por
+    <a href="https://ciborg347.onrender.com" target="_blank">Ciborg 347</a>
+  </footer>
 
-    <footer>
-      Demo web – vista previa.<br>
-      Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank">Ciborg 347</a>
-    </footer>
-  </div>
+</div>
 
-  <a class="wa-float" href="https://wa.me/5491164499481?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">🟢</a>
+<a class="wa-float" href="https://wa.me/5491164499481?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">
+  <svg viewBox="0 0 32 32">
+    <path d="M19.11 17.38c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.41.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.46-.16 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.13.65.28 1.15.45 1.54.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.27.23-.61.23-1.14.16-1.25-.07-.11-.25-.18-.52-.32z"/>
+    <path d="M16 3C9.38 3 4 8.38 4 15c0 2.12.55 4.12 1.6 5.89L4 29l8.3-1.55A11.94 11.94 0 0 0 16 27c6.62 0 12-5.38 12-12S22.62 3 16 3z"/>
+  </svg>
+</a>
 
 </body>
-  </html>
+</html>
